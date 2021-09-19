@@ -22,16 +22,32 @@ class ViewController: UIViewController {
             datePicker.preferredDatePickerStyle = .compact
             datePicker.locale = Locale(identifier: "ja_JP")  //表示する地域
             
-            datePicker.date = {() -> Date in
-
-                            let dateFormat = DateFormatter()
-                            dateFormat.locale = Locale(identifier: "ja_JP")
-                            dateFormat.dateStyle = .medium
-                            dateFormat.timeStyle = .none
-                            let nowTime = Date()
-
-                            return nowTime
-                        }()
+//            datePicker.date = {() -> Date in
+//
+//                            let dateFormat = DateFormatter()
+//                            dateFormat.locale = Locale(identifier: "ja_JP")
+//                            dateFormat.dateStyle = .medium
+//                            dateFormat.timeStyle = .none
+//                            let nowTime = Date()
+//
+//                            return nowTime
+//                        }()
+            datePicker.date = Date()
+            
+//            datePicker.minimumDate =  {() -> Date in
+//
+//                            let dateFormat = DateFormatter()
+//                            dateFormat.locale = Locale(identifier: "ja_JP")
+//                            dateFormat.dateStyle = .medium
+//                            dateFormat.timeStyle = .none
+//                            let nowTime = Date()
+//
+//                            return nowTime
+//                        }()
+            
+            datePicker.minimumDate = Date()
+            
+            
             
             return datePicker
         }()

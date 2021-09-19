@@ -19,7 +19,6 @@ class ViewController: UIViewController {
             
             datePicker.backgroundColor = .tertiarySystemGroupedBackground
             datePicker.datePickerMode = .date  //選択肢の内容
-            datePicker.preferredDatePickerStyle = .compact
             datePicker.locale = Locale(identifier: "ja_JP")  //表示する地域
             
 //            datePicker.date = {() -> Date in
@@ -47,7 +46,18 @@ class ViewController: UIViewController {
             
             datePicker.minimumDate = Date()
             
+//            datePicker.maximumDate = {() -> Date in
+//
+//                            let dateFormat = DateFormatter()
+//                            dateFormat.locale = Locale(identifier: "ja_JP")
+//                            dateFormat.dateStyle = .medium
+//                            dateFormat.timeStyle = .none
+//                            let oneWeekLaterTimeInterval = Date(timeInterval: 60 * 60 * 24 * 7, since: Date())
+//
+//                            return oneWeekLaterTimeInterval
+//                        }()
             
+            datePicker.maximumDate = Date(timeInterval: 60 * 60 * 24 * 7, since: Date())
             
             return datePicker
         }()

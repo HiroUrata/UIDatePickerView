@@ -11,7 +11,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let datePickerView = {() -> UIDatePicker in
+            
+            let datePicker = UIDatePicker()
+            datePicker.center = view.center
+            
+            datePicker.backgroundColor = .tertiarySystemGroupedBackground
+            datePicker.datePickerMode = .date  //選択肢の内容
+            datePicker.preferredDatePickerStyle = .compact
+            datePicker.locale = Locale(identifier: "ja_JP")  //表示する地域
+            
+            return datePicker
+        }()
+        
+        view.addSubview(datePickerView)
+        
     }
 
 
